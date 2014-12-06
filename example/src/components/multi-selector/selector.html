@@ -1,0 +1,16 @@
+<div class="app-multi-selector" style="display: none;">
+  <div class="ams-toolbar">
+    <a ng-click="data.selectAll()">Select All</a> | <a ng-click="data.deselectAll()">Deselect All</a>
+    <span class="ams-assigned">{{ data.totalSelected }} Assigned</span>
+  </div>
+  <form name="multiSelectForm">
+      <fieldset ng-repeat="row in data.rows" ng-class="{'selected':  row.assigned}" ng-click="data.assign($index);" >
+        <div class="ams-img"><img ng-src="{{row.img}}"></div>
+        <div class="ams-description-block">
+          <span class="ams-title">{{ row.title }}</span>
+          <span class="ams-description">{{ row.description }}</span>
+        </div>
+        <input type="checkbox" ng-checked="row.assigned">
+      </fieldset>
+  </form>
+</div>
