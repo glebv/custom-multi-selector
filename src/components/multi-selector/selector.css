@@ -1,0 +1,59 @@
+.app-multi-selector {
+  height: 21.7em;
+  width: 44.73em;
+  display: inline-block !important;
+  position: relative;
+  font-size: 1.2em; }
+  .app-multi-selector .ams-toolbar {
+    margin-left: 2.4em; }
+    .app-multi-selector .ams-toolbar a {
+      cursor: pointer; }
+    .app-multi-selector .ams-toolbar .ams-assigned {
+      float: right;
+      margin-right: 1.2em; }
+  .app-multi-selector form {
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 0.25em solid #CCCCCC;
+    border-bottom-left-radius: 1.42em;
+    border-top-left-radius: 1.42em;
+    margin-top: 2.0em;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0; }
+    .app-multi-selector form fieldset {
+      border-bottom: 0.25em solid #CCCCCC;
+      padding-left: 1.5em;
+      position: relative;
+      height: 6.5em; }
+      .app-multi-selector form fieldset.selected {
+        background-color: #00b3ee; }
+      .app-multi-selector form fieldset .ams-img {
+        display: inline-block;
+        vertical-align: middle; }
+        .app-multi-selector form fieldset .ams-img img {
+          float: left; }
+      .app-multi-selector form fieldset .ams-description-block {
+        margin-left: 1em;
+        position: relative;
+        display: inline-block; }
+        .app-multi-selector form fieldset .ams-description-block .ams-title {
+          padding-top: 0.5em;
+          padding-bottom: 0.5em;
+          font-weight: bold;
+          display: block; }
+        .app-multi-selector form fieldset .ams-description-block .ams-description {
+          padding-top: 3.0em;
+          font-size: 0.9em; }
+      .app-multi-selector form fieldset input[type="checkbox"] {
+        height: 1.2em;
+        width: 1.2em;
+        line-height: 1.2em;
+        float: right;
+        top: 2.1em;
+        position: absolute;
+        right: 3.7em; }
+
+/*# sourceMappingURL=selector.css.map */
