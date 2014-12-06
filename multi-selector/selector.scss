@@ -30,6 +30,7 @@
     top: 0;
 
     fieldset {
+      cursor: pointer;
       border-bottom: 0.25em solid #CCCCCC;
       padding-left: 1.5em;
       position: relative;
@@ -66,7 +67,7 @@
         float: right;
         top: 2.1em;
         position: absolute;
-        right: 3.7em;
+        right: 4.0em;
       }
 
     }

@@ -1,21 +1,23 @@
 'use strict';
 
-var mod = angular.module('app.comp', []);
-  mod.directive('appMultiSelector', function ($compile) {
+var mod = angular.module('cs.comp', []);
+  mod.directive('csMultiSelector', function ($compile) {
     return {
       replace: true,
       restrict: 'E',
       templateUrl: './components/multi-selector/selector.html',
       controller: 'MultiSelectorCtrl',
-      scope: {},
-      link: function(scope, elem) {
+      scope: {
+        rows: '=data'
+      },
+      link: function(scope) {
         var head = angular.element(document.getElementsByTagName('head')[0]);
         var html = '<link rel="stylesheet" ng-href="./components/multi-selector/selector.css" />';
         head.append($compile(html)(scope));
       }
     };
   })
-  .controller('MultiSelectorCtrl', function($scope, Contractors) {
+  .controller('MultiSelectorCtrl', function($scope) {
     $scope.data = {
       totalSelected: 0,
       selectAll: function() {
@@ -33,34 +35,12 @@ var mod = angular.module('app.comp', []);
       assign: function(index) {
         var element = this.rows[index];
         element.assigned = ! element.assigned;
-        element.assigned ? this.totalSelected++ : this.totalSelected--;
+        return element.assigned ? this.totalSelected++ : this.totalSelected--;
       },
-      rows: []
+      rows: $scope.rows
     };
 
-    Contractors.then(
-      function(res) {
-        $scope.data.rows = res;
-      }
-    );
-
   });
 
-//a generator fake data for the component
-  mod.factory('Contractors', function($q) {
-    var deferred = $q.defer();
 
-    var list = [];
-    for(var i = 1; i <= 10; i++ ) {
-      list.push({
-          img: 'assets/images/angular.png',
-          title: 'Contractor '+i,
-          description: 'Contractor Desc '+i
-        }
-      );
-    }
-    deferred.resolve(list);
-
-    return deferred.promise;
-  });
 

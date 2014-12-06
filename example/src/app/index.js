@@ -2,7 +2,7 @@
 
 angular.module('app', [
     'ui.router',
-    'app.comp'
+    'cs.comp'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
